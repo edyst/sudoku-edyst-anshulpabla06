@@ -1,0 +1,362 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet"> 
+
+    <title>Sudoku Project</title>
+</head>
+
+
+<body>
+    <div id="game">
+
+        <div class="buttongroup">
+            <button class="level" id="easy">Easy</button>
+            <button class="level" id="medium">Medium</button>
+            <button class="level" id="hard">Hard</button>
+
+        </div>
+        <div class="Sudokuboard">
+            <div class="cell" id="cell-1"><input class="1" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="1" onclick="myfunction(id,1)" /></div>
+            <div class="cell" id="cell-2"><input class="1" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="2" onclick="myfunction(id,1)" /></div>
+            <div class="cell" id="cell-3"><input class="1" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="3" onclick="myfunction(id,1)" /></div>
+            <div class="cell" id="cell-4"><input class="2" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="4" onclick="myfunction(id,2)" /></div>
+            <div class="cell" id="cell-5"><input class="2" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="5" onclick="myfunction(id,2)" /></div>
+            <div class="cell" id="cell-6"><input class="2" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="6" onclick="myfunction(id,2)" /></div>
+            <div class="cell" id="cell-7"><input class="3" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="7" onclick="myfunction(id,3)" /></div>
+            <div class="cell" id="cell-8"><input class="3" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="8" onclick="myfunction(id,3)" /></div>
+            <div class="cell" id="cell-9"><input class="3" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="9" onclick="myfunction(id),3" /></div>
+            <div class="cell" id="cell-10"><input class="1" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="10" onclick="myfunction(id,1)" /></div>
+            <div class="cell" id="cell-11"><input class="1" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="11" onclick="myfunction(id,1)" /></div>
+            <div class="cell" id="cell-12"><input class="1" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="12" onclick="myfunction(id,1)" /></div>
+            <div class="cell" id="cell-13"><input class="2" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="13" onclick="myfunction(id,2)" /></div>
+            <div class="cell" id="cell-14"><input class="2" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="14" onclick="myfunction(id,2)" /></div>
+            <div class="cell" id="cell-15"><input class="2" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="15" onclick="myfunction(id,2)" /></div>
+            <div class="cell" id="cell-16"><input class="3" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="16" onclick="myfunction(id,3)" /></div>
+            <div class="cell" id="cell-17"><input class="3" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="17" onclick="myfunction(id,3)" /></div>
+            <div class="cell" id="cell-18"><input class="3" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="18" onclick="myfunction(id,3)" /></div>
+            <div class="cell" id="cell-19"><input class="1" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="19" onclick="myfunction(id,1)" /></div>
+            <div class="cell" id="cell-20"><input class="1" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="20" onclick="myfunction(id,1)" /></div>
+            <div class="cell" id="cell-21"><input class="1" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="21" onclick="myfunction(id,1)" /></div>
+            <div class="cell" id="cell-22"><input class="2" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="22" onclick="myfunction(id,2)" /></div>
+            <div class="cell" id="cell-23"><input class="2" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="23" onclick="myfunction(id,2)" /></div>
+            <div class="cell" id="cell-24"><input class="2" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="24" onclick="myfunction(id,2)" /></div>
+            <div class="cell" id="cell-25"><input class="3" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="25" onclick="myfunction(id,3)" /></div>
+            <div class="cell" id="cell-26"><input class="3" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="26" onclick="myfunction(id,3)" /></div>
+            <div class="cell" id="cell-27"><input class="3" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="27" onclick="myfunction(id,3)" /></div>
+            <div class="cell" id="cell-28"><input class="4" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="28" onclick="myfunction(id,4)" /></div>
+            <div class="cell" id="cell-29"><input class="4" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="29" onclick="myfunction(id,4)" /></div>
+            <div class="cell" id="cell-30"><input class="4" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="30" onclick="myfunction(id,4)" /></div>
+            <div class="cell" id="cell-31"><input class="5" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="31" onclick="myfunction(id,5)" /></div>
+            <div class="cell" id="cell-32"><input class="5" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="32" onclick="myfunction(id,5)" /></div>
+            <div class="cell" id="cell-33"><input class="5" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="33" onclick="myfunction(id,5)" /></div>
+            <div class="cell" id="cell-34"><input class="6" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="34" onclick="myfunction(id,6)" /></div>
+            <div class="cell" id="cell-35"><input class="6" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="35" onclick="myfunction(id,6)" /></div>
+            <div class="cell" id="cell-36"><input class="6" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="36" onclick="myfunction(id,6)" /></div>
+            <div class="cell" id="cell-37"><input class="4" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="37" onclick="myfunction(id,4)" /></div>
+            <div class="cell" id="cell-38"><input class="4" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="38" onclick="myfunction(id,4)" /></div>
+            <div class="cell" id="cell-39"><input class="4" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="39" onclick="myfunction(id,4)" /></div>
+            <div class="cell" id="cell-40"><input class="5" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="40" onclick="myfunction(id,5)" /></div>
+            <div class="cell" id="cell-41"><input class="5" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="41" onclick="myfunction(id,5)" /></div>
+            <div class="cell" id="cell-42"><input class="5" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="42" onclick="myfunction(id,5)" /></div>
+            <div class="cell" id="cell-43"><input class="6" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="43" onclick="myfunction(id,6)" /></div>
+            <div class="cell" id="cell-44"><input class="6" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="44" onclick="myfunction(id,6)" /></div>
+            <div class="cell" id="cell-45"><input class="6" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="45" onclick="myfunction(id,6)" /></div>
+            <div class="cell" id="cell-46"><input class="4" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="46" onclick="myfunction(id,4)" /></div>
+            <div class="cell" id="cell-47"><input class="4" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="47" onclick="myfunction(id,4)" /></div>
+            <div class="cell" id="cell-48"><input class="4" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="48" onclick="myfunction(id,4)" /></div>
+            <div class="cell" id="cell-49"><input class="5" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="49" onclick="myfunction(id,5)" /></div>
+            <div class="cell" id="cell-50"><input class="5" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="50" onclick="myfunction(id,5)" /></div>
+            <div class="cell" id="cell-51"><input class="5" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="51" onclick="myfunction(id,5)" /></div>
+            <div class="cell" id="cell-52"><input class="6" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="52" onclick="myfunction(id,6)" /></div>
+            <div class="cell" id="cell-53"><input class="6" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="53" onclick="myfunction(id,6)" /></div>
+            <div class="cell" id="cell-54"><input class="6" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="54" onclick="myfunction(id,6)" /></div>
+            <div class="cell" id="cell-55"><input class="7" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="55" onclick="myfunction(id,7)" /></div>
+            <div class="cell" id="cell-56"><input class="7" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="56" onclick="myfunction(id,7)" /></div>
+            <div class="cell" id="cell-57"><input class="7" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="57" onclick="myfunction(id,7)" /></div>
+            <div class="cell" id="cell-58"><input class="8" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="58" onclick="myfunction(id,8)" /></div>
+            <div class="cell" id="cell-59"><input class="8" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="59" onclick="myfunction(id,8)" /></div>
+            <div class="cell" id="cell-60"><input class="8" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="60" onclick="myfunction(id,8)" /></div>
+            <div class="cell" id="cell-61"><input class="9" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="61" onclick="myfunction(id,9)" /></div>
+            <div class="cell" id="cell-62"><input class="9" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="62" onclick="myfunction(id,9)" /></div>
+            <div class="cell" id="cell-63"><input class="9" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="63" onclick="myfunction(id,9)" /></div>
+            <div class="cell" id="cell-64"><input class="7" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="64" onclick="myfunction(id,7)" /></div>
+            <div class="cell" id="cell-65"><input class="7" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="65" onclick="myfunction(id,7)" /></div>
+            <div class="cell" id="cell-66"><input class="7" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="66" onclick="myfunction(id,7)" /></div>
+            <div class="cell" id="cell-67"><input class="8" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="67" onclick="myfunction(id,8)" /></div>
+            <div class="cell" id="cell-68"><input class="8" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="68" onclick="myfunction(id,8)" /></div>
+            <div class="cell" id="cell-69"><input class="8" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="69" onclick="myfunction(id,8)" /></div>
+            <div class="cell" id="cell-70"><input class="9" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="70" onclick="myfunction(id,9)" /></div>
+            <div class="cell" id="cell-71"><input class="9" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="71" onclick="myfunction(id,9)" /></div>
+            <div class="cell" id="cell-72"><input class="9" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="72" onclick="myfunction(id,9)" /></div>
+            <div class="cell" id="cell-73"><input class="7" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="73" onclick="myfunction(id,7)" /></div>
+            <div class="cell" id="cell-74"><input class="7" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="74" onclick="myfunction(id,7)" /></div>
+            <div class="cell" id="cell-75"><input class="7" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="75" onclick="myfunction(id,7)" /></div>
+            <div class="cell" id="cell-76"><input class="8" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="76" onclick="myfunction(id,8)" /></div>
+            <div class="cell" id="cell-77"><input class="8" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="77" onclick="myfunction(id,8)" /></div>
+            <div class="cell" id="cell-78"><input class="8" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="78" onclick="myfunction(id,8)" /></div>
+            <div class="cell" id="cell-79"><input class="9" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="79" onclick="myfunction(id,9)" /></div>
+            <div class="cell" id="cell-80"><input class="9" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="80" onclick="myfunction(id,9)" /></div>
+            <div class="cell" id="cell-81"><input class="9" type="number" maxlength="1" pattern="\d*" min="1" max="9"
+                    oninput="this.value = 
+        !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null ;myLocal(this.id) "
+                    onKeyPress="if(this.value.length==1) return false;" id="81" onclick="myfunction(id,9)" /></div>
+        </div>
+        <div class="last">
+            <button class="validation" id="Validate">Validate</button>
+            <button class="validation"  onclick="newGame()" id="new">Start a New Game</button>
+        </div>
+    </div>
+
+
+
+</body>
+<script src="script.js"></script>
+
+</html>
